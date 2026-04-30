@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 html { scroll-behavior: smooth; }
 
@@ -24,7 +19,6 @@ header {
   padding: 16px 24px;
   position: sticky;
   top: 0;
-  z-index: 100;
   box-shadow: 0 4px 0px #0f3460;
 }
 
@@ -79,13 +73,12 @@ main {
   gap: 56px;
 }
 
-/* Player info */
 .player-info {
   flex: 1;
-  min-width: 220px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .player-tag {
@@ -106,8 +99,6 @@ main {
   letter-spacing: 4px;
 }
 
-
-/* ─── SECTION COMMON ─── */
 .section {
   display: flex;
   flex-direction: column;
@@ -124,7 +115,6 @@ main {
   padding-bottom: 12px;
 }
 
-/* ─── SKILL CARDS ─── */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -144,12 +134,6 @@ main {
   overflow: hidden;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-}
 
 .card:hover {
   transform: translate(-3px, -3px);
@@ -185,74 +169,10 @@ main {
 }
 
 
-/* ─── QUEST LOG ─── */
-.quest-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.quest-item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background-color: #1a1a2e;
-  border: 3px solid #0f3460;
-  padding: 20px;
-  box-shadow: 4px 4px 0px #0f3460;
-  transition: transform 0.15s, box-shadow 0.15s;
-  flex-wrap: wrap;
-}
-
-.quest-item:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #0f3460;
-}
-
-.quest-status {
-  font-size: 7px;
-  padding: 6px 10px;
-  min-width: 60px;
-  text-align: center;
-  border: 2px solid;
-  flex-shrink: 0;
-}
-
-.quest--done   .quest-status { color: #4ade80; border-color: #4ade80; }
-.quest--active .quest-status { color: #f5c26b; border-color: #f5c26b; }
-.quest--locked .quest-status { color: #94a3b8; border-color: #94a3b8; }
-
-.quest-content {
-  flex: 1;
-  min-width: 180px;
-}
-
-.quest-name {
-  font-size: 9px;
-  color: #e2e8f0;
-  margin-bottom: 6px;
-  letter-spacing: 1px;
-}
-
-.quest-desc {
-  font-family: 'VT323', monospace;
-  font-size: 17px;
-  color: #94a3b8;
-}
-
-.quest-reward {
-  font-size: 8px;
-  flex-shrink: 0;
-}
-
-.quest--done   .quest-reward { color: #4ade80; }
-.quest--active .quest-reward { color: #f5c26b; }
-.quest--locked .quest-reward { color: #94a3b8; }
-
 footer {
   background-color: #1a1a2e;
   border-top: 3px solid #0f3460;
-  padding: 48px 24px;
+  padding: 40px 20px;
   text-align: center;
   box-shadow: 0 -4px 0 #0f3460;
 }
@@ -319,20 +239,13 @@ footer {
 
   .player-name { font-size: 14px; }
 
-  .hero-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    text-align: center;
-  }
+
 
   .player-info {
     align-items: center;
     width: 100%;
   }
 
-  .stat-grid { width: 100%; }
-  .xp-bar-wrap { width: 100%; }
 
   .cards-grid { grid-template-columns: 1fr; }
 
@@ -360,7 +273,6 @@ footer {
     gap: 36px;
   }
 
-  .hero-section { padding: 20px 14px; }
 
   .avatar-sprite {
     width: 96px;
