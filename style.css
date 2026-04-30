@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0a0a0f;
+  color: #e2e8f0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #1a1a2e;
+  border-bottom: 3px solid #0f3460;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 0px #0f3460;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: #12121c;
+  border-bottom: 2px solid #e94560;
+  padding: 10px 24px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: #4ecca3;
+  text-decoration: none;
+  font-size: 9px;
+  padding: 8px 12px;
+  display: block;
+  border: 2px solid transparent;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  border-color: #4ecca3;
+  color: #0a0a0f;
+  background-color: #4ecca3;
+  outline: none;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* Player info */
+.player-info {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.player-tag {
+  color: #94a3b8;
+  font-size: 8px;
+}
+
+.player-name {
+  font-size: 20px;
+  color: #f5c26b;
+  text-shadow: 3px 3px 0 #7c5a0a;
+  letter-spacing: 2px;
+}
+
+.player-class {
+  color: #4ecca3;
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+
+/* ─── SECTION COMMON ─── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-title {
+  font-size: 12px;
+  color: #e94560;
+  letter-spacing: 4px;
+  text-align: center;
+  text-shadow: 2px 2px 0 #7c1424;
+  border-bottom: 2px solid #e94560;
+  padding-bottom: 12px;
+}
+
+/* ─── SKILL CARDS ─── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: #1a1a2e;
+  border: 3px solid #0f3460;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 4px 4px 0px #0f3460;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px #0f3460;
+}
+
+.card-title {
+  font-size: 11px;
+  color: #e2e8f0;
+  letter-spacing: 1px;
+}
+
+.pixel-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  background-color: transparent;
+  color: #4ecca3;
+  border: 2px solid #4ecca3;
+  padding: 10px 16px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  align-self: flex-start;
+  transition: background-color 0.1s, color 0.1s, transform 0.1s, box-shadow 0.1s;
+  box-shadow: 3px 3px 0 #0a4d3d;
+}
+
+.pixel-btn:hover {
+  background-color: #4ecca3;
+  color: #0a0a0f;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #0a4d3d;
+}
+
+
+/* ─── QUEST LOG ─── */
+.quest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.quest-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #1a1a2e;
+  border: 3px solid #0f3460;
+  padding: 20px;
+  box-shadow: 4px 4px 0px #0f3460;
+  transition: transform 0.15s, box-shadow 0.15s;
+  flex-wrap: wrap;
+}
+
+.quest-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #0f3460;
+}
+
+.quest-status {
+  font-size: 7px;
+  padding: 6px 10px;
+  min-width: 60px;
+  text-align: center;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.quest--done   .quest-status { color: #4ade80; border-color: #4ade80; }
+.quest--active .quest-status { color: #f5c26b; border-color: #f5c26b; }
+.quest--locked .quest-status { color: #94a3b8; border-color: #94a3b8; }
+
+.quest-content {
+  flex: 1;
+  min-width: 180px;
+}
+
+.quest-name {
+  font-size: 9px;
+  color: #e2e8f0;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.quest-desc {
+  font-family: 'VT323', monospace;
+  font-size: 17px;
+  color: #94a3b8;
+}
+
+.quest-reward {
+  font-size: 8px;
+  flex-shrink: 0;
+}
+
+.quest--done   .quest-reward { color: #4ade80; }
+.quest--active .quest-reward { color: #f5c26b; }
+.quest--locked .quest-reward { color: #94a3b8; }
+
+footer {
+  background-color: #1a1a2e;
+  border-top: 3px solid #0f3460;
+  padding: 48px 24px;
+  text-align: center;
+  box-shadow: 0 -4px 0 #0f3460;
+}
+
+.footer-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-title {
+  font-size: 14px;
+  color: #e94560;
+  text-shadow: 2px 2px 0 #7c1424;
+  animation: blink 1.8s step-end infinite;
+}
+
+.footer-sub {
+  font-size: 8px;
+  color: #94a3b8;
+  letter-spacing: 3px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.footer-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  text-decoration: none;
+  color: #4ecca3;
+  border: 2px solid #4ecca3;
+  padding: 10px 18px;
+  box-shadow: 3px 3px 0 #0a4d3d;
+  transition: background-color 0.12s, color 0.12s, transform 0.12s, box-shadow 0.12s;
+}
+
+.footer-btn:hover {
+  background-color: #4ecca3;
+  color: #0a0a0f;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #0a4d3d;
+}
+
+.footer-copy {
+  font-size: 7px;
+  color: #94a3b8;
+  letter-spacing: 2px;
+}
+
+
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .player-name { font-size: 14px; }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .player-info {
+    align-items: center;
+    width: 100%;
+  }
+
+  .stat-grid { width: 100%; }
+  .xp-bar-wrap { width: 100%; }
+
+  .cards-grid { grid-template-columns: 1fr; }
+
+  .quest-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 9px; }
+
+  .site-title { font-size: 9px; }
+
+  .nav-list { gap: 4px; }
+
+  .nav-link {
+    font-size: 7px;
+    padding: 6px 8px;
+  }
+
+  main {
+    padding: 20px 12px;
+    gap: 36px;
+  }
+
+  .hero-section { padding: 20px 14px; }
+
+  .avatar-sprite {
+    width: 96px;
+    height: 96px;
+  }
+
+  .player-name { font-size: 12px; }
+
+  .section-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .footer-title { font-size: 10px; }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
